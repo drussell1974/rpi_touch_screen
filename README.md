@@ -8,5 +8,5 @@
 - sudo pip install pygame
 - sudo pip install pygameui
 
-Solution to 
+Solution to error 'python setup.py egg_info failed with error code 1' when installing pygameui 
 https://stackoverflow.com/questions/28150201/trouble-with-pygameui-raspberrypi
