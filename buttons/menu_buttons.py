@@ -8,12 +8,12 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 
-log_format = '%(asctime)-6s: %(name)s - %(levelname)s - %(message)s'
-console_handler = logging.streamHandler()
-console_handler.setFormatter(logging.Formatter(log_format))
-logger = logger.getLogger()
-logger.setLevel(logging.DEBUG)
-logger.addHandler(console_handler)
+#log_format = '%(asctime)-6s: %(name)s - %(levelname)s - %(message)s'
+#console_handler = logging.streamHandler()
+#console_handler.setFormatter(logging.Formatter(log_format))
+#logger = logger.getLogger()
+#logger.setLevel(logging.DEBUG)
+#logger.addHandler(console_handler)
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 os.putenv('SDL_MOUSEDRV', 'TSLIB')
@@ -44,7 +44,7 @@ class PiTft(ui.Scene):
     
     
     def gpi_button(self, btn, mbtn):
-        logger.info(btn.text)
+        #logger.info(btn.text)
 
         if btn.text == '17 on':
             GPIO.output(17, False)
@@ -55,7 +55,7 @@ class PiTft(ui.Scene):
         elif btn.text == '4 off':
             GPIO.output(4, True)
 
-u.init('Raspberry Pi UI', (320, 240))
+ui.init('Raspberry Pi UI', (320, 240))
 pygame.mouse.set_visible(False)
 ui.scene.push(PiTft())
 ui.run()
